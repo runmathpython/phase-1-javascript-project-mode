@@ -45,9 +45,38 @@ document.addEventListener("DOMContentLoaded", () => {
         h3.innerHTML = `${movie.comment}`
         card.appendChild(h3)
     
-        
-      } // renderOneMovie
+        // If the user clicks the like button, update the likes
+        card.querySelector('.like-btn').addEventListener('click', () => {
+            movie.likes += 1
+            updateLikes(movie)
+        })
+  
+        // if the user clicks the delete button, delete the movie
+        card.querySelector('.delete-btn').addEventListener('click', () => {
+            card.remove()
+            deleteMovie(movie.id)
+        })
+    } // renderOneMovie
 
+    function updateLikes(movieObj){
+        fetch(`http://localhost:3000/movies/${movieObj.id}`, {
+          method: 'PATCH',
+          headers:{
+            'Content-Type': 'application/json',
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(movieObj)
+        })
+        .then(response => response.json())
+        .then(movie => {
+          // Get the movie card
+          //const toyCard = document.querySelector(`div#${toy.id}`) why this doesn't work?
+          const movieCard = document.getElementById(`${movie.id}`)
+          // Update the likes for the movie with the id
+          const theLikes = movieCard.querySelector("p")
+          theLikes.innerHTML = `${movie.likes} likes`
+        })
+    } // updateLikes
 
     // Get all the movie data and render them to the DOM
     function renderAllMovies() {
