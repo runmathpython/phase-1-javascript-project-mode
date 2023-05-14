@@ -1,3 +1,21 @@
 body {
     font-family: monospace;
 }
+
+#head {
+    text-align: center;
+  }
+  
+  #movie-header {
+    display: flex;
+    justify-content: center;
+    background: #515DA2;
+    opacity: .5;
+    height: 6rem;
+    padding: 1rem;
+  }
+  
+  #movie-header img {
+    height: 6rem;
+    width: auto;
+  }
