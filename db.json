@@ -4,90 +4,90 @@
       "id": 1,
       "name": "American National Parks",
       "image": "mvs/American-National-Parks.jpg",
-      "likes": 1,
+      "likes": 3,
       "comment": "Great!"
     },
     {
       "id": 2,
       "name": "Bad Boys",
       "image": "mvs/Bad-Boys.jpg",
-      "likes": 1,
+      "likes": 3,
       "comment": "Very Good!"
     },
     {
       "id": 3,
       "name": "Daydream Nation",
       "image": "mvs/Daydream-Nation.jpg",
-      "likes": 1,
+      "likes": 3,
       "comment": "Wonderful!"
     },
     {
       "id": 4,
       "name": "Film Sourcing",
       "image": "mvs/Film-Sourcing.jpg",
-      "likes": 1,
+      "likes": 3,
       "comment": "Very Funny"
     },
     {
       "id": 5,
       "name": "Guardians of Galaxy",
       "image": "mvs/Guardians-of-Galaxy.jpg",
-      "likes": 1,
+      "likes": 3,
       "comment": "Remarkable!"
     },
     {
       "id": 6,
       "name": "Indiana Jones",
       "image": "mvs/Indiana-Jones.jpg",
-      "likes": 1,
+      "likes": 3,
       "comment": "Fantastic!"
     },
     {
       "id": 7,
       "name": "Little Man",
       "image": "mvs/Little-Man-1.jpg",
-      "likes": 1,
+      "likes": 3,
       "comment": "Ausom!"
     },
     {
       "id": 8,
       "name": "Love Happens",
       "image": "mvs/Love-Happens.jpg",
-      "likes": 1,
+      "likes": 3,
       "comment": "Beautiful!"
     },
     {
       "name": "Nature",
       "image": "mvs/Nature.jpg",
-      "likes": 1,
+      "likes": 3,
       "id": 9,
       "comment": "Fantastic!"
     },
     {
       "name": "Perfectly Natural",
       "image": "mvs/Perfectly-Natural.jpg",
-      "likes": 1,
+      "likes": 3,
       "id": 10,
       "comment": "Great!"
     },
     {
       "name": "Star Wars",
       "image": "mvs/Star-Wars.jpg",
-      "likes": 1,
+      "likes": 3,
       "id": 11,
       "comment": "Remarkable!"
     },
     {
       "name": "The Watch",
       "image": "mvs/The-Watch.jpg",
-      "likes": 1,
+      "likes": 3,
       "id": 12,
       "comment": "Wonderful!"
     },
     {
       "name": "Win Win",
       "image": "mvs/Win-Win.jpg",
-      "likes": 1,
+      "likes": 3,
       "comment": "no comment",
       "id": 13
     }

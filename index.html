@@ -8,15 +8,46 @@
     <body>
         <div id = "head">
             <h1>Movie Library</h1>
-          </div>
+        </div>
           
-          <div id="movie-header">
-            
+        <div id="movie-header">    
             <img
               src="mvs/moviephoto.png"
               alt="movie-header"
             />
+        </div>
+
+        <div class="add-container">
+            <form class="add-movie-form">
+                <h3>Add A Movie!</h3>
+        
+                <input
+                    type="text"
+                    name="name"
+                    value=""
+                    placeholder="Enter the name of the movie..."
+                    class="input-text"
+                />
+                <br />
+                <input
+                    type="text"
+                    name="image"
+                    value=""
+                    placeholder="Enter the image URL of the movie..."
+                    class="input-text"
+                />
+                <br />
+                <input
+                    type="submit"
+                    name="submit"
+                    value="Add Movie"
+                    class="submit"
+                />
+            </form>
           </div>
+          <p style="text-align:center">
+            Found a new movie? <button id="new-movie-btn">Add a new movie</button>
+          </p>
 
         <div id="movie-collection"></div>
         <script type="text/javascript" src="index.js"></script>

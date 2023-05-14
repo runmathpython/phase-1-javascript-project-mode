@@ -1,4 +1,9 @@
+let addMovie = false, commentMovie = false;
+
 document.addEventListener("DOMContentLoaded", () => {
+
+    const addBtn = document.querySelector("#new-movie-btn");
+    const movieFormContainer = document.querySelector(".add-container");
 
     function renderOneMovie(movie) {
         // Get the parent node whose child is a movie card
@@ -78,6 +83,17 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     } // updateLikes
 
+    function deleteMovie(id){
+      fetch(`http://localhost:3000/movies/${id}`,{
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => res.json())
+      .then(movie => console.log(movie))
+    }
+
     // Get all the movie data and render them to the DOM
     function renderAllMovies() {
         fetch('http://localhost:3000/movies')
@@ -92,6 +108,52 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     } // renderALlMovies
     renderAllMovies()
+
+    function addNewMovie(nameInput, imageInput) {
+        const formData = {
+            "name": nameInput,
+            "image": imageInput,
+            "likes": 0,
+            "comment": "no comment"
+          };
+          
+        const configurationObject = {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json",
+            },
+            body: JSON.stringify(formData),
+          };
+        
+        fetch('http://localhost:3000/movies', configurationObject)
+          .then((response) => response.json())
+          .then((data) => renderOneMovie(data))
+          .catch(function (error) {
+            alert("401!!!");
+            const errorMsg = document.querySelector('.container')
+            const h2 = document.createElement('h2');
+            h2.innerHTML = "Unauthorized Access";
+            errorMsg.appendChild(h2);
+          });
+    } // addNewMovie
+    
+    movieFormContainer.addEventListener('submit', function(event) {
+        event.preventDefault();
+        let nameInput = document.querySelectorAll("input.input-text")[0];
+        let imageInput = document.querySelectorAll("input.input-text")[1];
+        addNewMovie(nameInput.value, imageInput.value);
+    }); // movieFormContainer.addEventListener
+    
+    addBtn.addEventListener("click", () => {
+        // hide or show the form
+        addMovie = !addMovie;
+        if (addMovie) {
+            movieFormContainer.style.display = "block";
+        } else {
+            movieFormContainer.style.display = "none";
+        }
+    });
 
 
 })
