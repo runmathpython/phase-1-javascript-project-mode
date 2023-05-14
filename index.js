@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const addBtn = document.querySelector("#new-movie-btn");
     const movieFormContainer = document.querySelector(".add-container");
+    const commentBtn = document.querySelector("#new-comment-btn");
+    const commentFormContainer = document.querySelector(".comment-container");
 
     function renderOneMovie(movie) {
         // Get the parent node whose child is a movie card
@@ -153,6 +155,76 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             movieFormContainer.style.display = "none";
         }
+    });
+  
+    function isMovie(item, theName){
+      return item.name === `${theName}`
+    }
+  
+    function getTheMovie(movies, theName, cb){
+      let result = null
+      for (let movie of movies){
+        if(cb(movie, theName) === true){
+          result = movie
+          break
+        }
+      }
+      return result
+    }
+  
+    function updateComment(theComment, theName){
+      // get all the movies
+      fetch('http://localhost:3000/movies')
+      .then(response => response.json())
+      // find the movie with the name and update the comment
+      .then(movies => {
+        let foundMovie = getTheMovie(movies, theName, isMovie)
+        // update the comment
+        foundMovie.comment = theComment
+  
+        // update the database
+        fetch(`http://localhost:3000/movies/${foundMovie.id}`, {
+          method: 'PATCH',
+          headers:{
+            'Content-Type': 'application/json',
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(foundMovie)
+        })
+        .then(response => response.json())
+        .then(movie => {
+  
+          // Get the movie card on the screen
+          const movieCard = document.getElementById(`${movie.id}`)
+          // Update the card with the new comment for the movie
+          const theComment = movieCard.querySelector("h3")
+          theComment.innerHTML = `${movie.comment}`
+        })
+      })
+      .catch(function (error) {
+        alert("401!");
+        const toyCollection = document.querySelector('div#movie-collection')
+        const h2 = document.createElement('h2');
+        h2.innerHTML = "Unauthorized Access";
+        toyCollection.appendChild(h2);
+      });
+    } // updateComment
+  
+    commentFormContainer.addEventListener('submit', function(event) {
+      event.preventDefault();
+      let nameInput = document.querySelectorAll("input.input-text")[2];
+      let commentInput = document.querySelectorAll("input.input-text")[3];
+      updateComment(commentInput.value, nameInput.value);
+    }); // commentFormContainer.addEventListener
+  
+    commentBtn.addEventListener("click", () => {
+      // hide or show the form
+      commentMovie = !commentMovie;
+      if (commentMovie) {
+          commentFormContainer.style.display = "block";
+      } else {
+          commentFormContainer.style.display = "none";
+      }
     });
 
 

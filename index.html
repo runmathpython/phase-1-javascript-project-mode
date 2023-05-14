@@ -40,13 +40,46 @@
                 <input
                     type="submit"
                     name="submit"
-                    value="Add Movie"
+                    value="SUBMIT"
                     class="submit"
                 />
+                <p>After SUBMIT, or to cancel, refresh the screen</p>
+            </form>
+        </div>
+            <p style="text-align:center">
+                Found a new movie? <button id="new-movie-btn">Add a new movie</button>
+            </p>
+
+        <div class="comment-container">
+            <form class="new-comment-form">
+                <h3>New Comment!</h3>
+                <input
+                    type="text"
+                    name="name"
+                    value=""
+                    placeholder="Enter the name of the movie..."
+                    class="input-text"
+                />
+                <br />
+                <input
+                    type="text"
+                    name="comment"
+                    value=""
+                    placeholder="Enter a new comment..."
+                    class="input-text"
+                />
+                <br />
+                <input
+                    type="submit"
+                    name="submit"
+                    value="SUBMIT"
+                    class="submit"
+                />
+                <p>After SUBMIT, or to cancel, refresh the screen</p>
             </form>
           </div>
           <p style="text-align:center">
-            Found a new movie? <button id="new-movie-btn">Add a new movie</button>
+            New comment? <button id="new-comment-btn">Put a new comment</button>
           </p>
 
         <div id="movie-collection"></div>

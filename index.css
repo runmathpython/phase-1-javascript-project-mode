@@ -14,7 +14,7 @@ body {
     height: 6rem;
     padding: 1rem;
   }
-  
+
 #movie-header img {
     height: 6rem;
     width: auto;
@@ -23,7 +23,7 @@ body {
 #movie-collection {
     margin: 2rem;
   }
-  
+
 .card {
     text-align: center;
     border: grey solid 1px;
@@ -34,7 +34,7 @@ body {
     margin: 1rem 2rem;
     box-shadow: 4px 5px #4b4de0
   }
-  
+
 .movie-avatar {
     justify-self: center;
     height: 12rem;
@@ -52,7 +52,7 @@ button {
     font-size: 16px;
     justify-self: center;
   }
-  
+
 button:hover {
     background-color: whitesmoke;
     border: #e04b52 solid 1px;
@@ -67,8 +67,21 @@ button:hover {
     background: #515DA2;
     opacity: .8;
   }
-  
+
 .add-movie-form {
+    width: 80%
+  }
+
+.comment-container {
+    padding: 1rem;
+    width: stretch;
+    height: auto;
+    display: none;
+    background: #515DA2;
+    opacity: .8;
+  }
+
+.new-comment-form {
     width: 80%
   }
 
@@ -84,14 +97,13 @@ button:hover {
     font-family: monospace;
     margin: 3px;
   }
-  
+
 .submit:hover {
     background-color: whitesmoke;
     border: #e04b52 solid 1px;
     color: #e04b52;
   }
-  
-  
+
 .input-text {
     border-radius: 5px;
     height: 2rem;
@@ -100,4 +112,3 @@ button:hover {
     font-family: monospace;
     margin: 3px;
   }
-

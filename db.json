@@ -4,21 +4,21 @@
       "id": 1,
       "name": "American National Parks",
       "image": "mvs/American-National-Parks.jpg",
-      "likes": 3,
+      "likes": 4,
       "comment": "Great!"
     },
     {
       "id": 2,
       "name": "Bad Boys",
       "image": "mvs/Bad-Boys.jpg",
-      "likes": 3,
-      "comment": "Very Good!"
+      "likes": 4,
+      "comment": "Fantastic"
     },
     {
       "id": 3,
       "name": "Daydream Nation",
       "image": "mvs/Daydream-Nation.jpg",
-      "likes": 3,
+      "likes": 4,
       "comment": "Wonderful!"
     },
     {
@@ -88,7 +88,7 @@
       "name": "Win Win",
       "image": "mvs/Win-Win.jpg",
       "likes": 3,
-      "comment": "no comment",
+      "comment": "Fantastic",
       "id": 13
     }
   ]
